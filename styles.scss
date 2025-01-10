@@ -1,0 +1,247 @@
+@import 'styles/foundation';
+@import 'styles/shared';
+
+.fold {
+  background: linear-gradient(0deg, $c-darkGreen 0%, $c-darkBlue 100%);
+}
+
+// Nav Code
+nav {
+
+  .nav-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    padding: 1rem 0;
+    align-items: center;
+
+    img {
+      height: 4.5rem;
+
+      @media (min-width: $bp-500) {
+        height: 6rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 1rem;
+
+      li a {
+        text-decoration: none;
+        color: $c-paleGreen;
+      }
+    }
+  }
+}
+
+// Main Landing Code
+.main {
+  padding: 3.5vw 0 5vw;
+
+  .main-wrapper {
+    display: grid;
+    align-items: center;
+
+    @media (max-width:$bp-750) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+
+      &::before {
+        background: url("/images/me-pic.png") no-repeat center / contain;
+        content: '';
+        width: 100%;
+        height: 40vw;
+        display: block;
+      }
+    }
+
+    @media (min-width:$bp-750) {
+      grid-template-columns: 1fr 1fr;
+      max-width: $bp-1000;
+
+      &::after {
+        background: url("/images/me-pic.png") no-repeat center / contain;
+        content: '';
+        width: 100%;
+        height: 30rem;
+        display: block;
+      }
+    }
+    
+  }
+
+  .main-content {
+    margin: auto;
+    justify-content: center;
+    padding: 1rem;
+    max-width: $bp-500;
+
+    h1, p {
+      color: $c-paleGreen;
+    }
+
+    h3 {
+      color: $c-paleGreen;
+      font-family: $f-body;
+      font-weight: 400;
+    }
+  }
+}
+
+.stats {
+  background-color: $c-mistBlue;
+  padding: 5vw 0;
+
+  .stats-content {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $c-paleGreen;
+
+    .stat {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+
+      .stat-emphasis {
+        font-family: $f-heading;
+        text-transform: uppercase;
+        font-weight: bolder;
+
+        .stat-bg {
+          font-size: clamp(3.5rem, 4vw + 1rem, 4.5rem);
+          line-height: 1;
+          display: block;
+        }
+
+        .stat-sm {
+          font-size: clamp(1.5rem, 4vw + 1rem, 2rem);
+          display: block;
+        }
+      }
+
+      .stat-details {
+        margin: 0 1rem;
+        font-size: clamp(1rem, 4vw + 1rem, 1.125rem);
+        font-weight: bold;
+
+        &::before {
+          content: "";
+            display: block;
+            height: 3px;
+            width: 40%;
+            background: $c-darkGreen;
+            margin: 0.5rem auto;
+        }
+      }
+    }
+
+    @media (min-width: $bp-600) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      max-width: $bp-650;
+      margin: auto;
+    }
+
+    @media (min-width: $bp-1000) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      gap: .25rem;
+      max-width: 100%;
+    }
+  }
+}
+
+
+.portfolio {
+  padding: 5vw 0;
+  text-align: center;
+  background-color: $c-darkGreen;
+
+  h2, .portfolio-intro {
+    color: $c-paleGreen;
+    max-width: $bp-750;
+    margin: auto;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  .portfolio-intro {
+    padding-bottom: 2rem;
+  }
+
+  .portfolio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+
+    .portfolio-item {
+      list-style-type: none;
+      margin: 0;
+      transition: all 0.25s ease-in-out;
+      box-shadow: 0px 0px 30px 0px #393b3b80;
+      background-color: $c-paleGreen;
+      border-radius: 10px;
+      position: relative;
+      
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 1.25rem;
+        margin: auto;
+        color: #273c3e;
+
+        .img-container {
+          display: block;
+          height: 5rem;
+          overflow: hidden;
+
+          img {
+            display: block;
+            height: auto;
+            width: 100%;
+            transition: transform 10s;
+
+            &.item-1 {
+
+            }
+
+            &.item-2 {
+
+            }
+
+            &.item-3 {
+
+            }
+
+            &.item-4 {
+
+            }
+
+            &.item-5 {
+
+            }
+
+            &.item-6 {
+
+            }
+          }
+        }
+      }
+
+      
+    }
+  }
+}
