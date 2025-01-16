@@ -1,16 +1,15 @@
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
 
-
-$f-heading: 'Philosopher', sans-serif;
-$f-body: 'Mulish', sans-serif;
+$f-heading: "Yeseva One", serif;
+$f-body: "Josefin Sans", serif;
 
 // Colors
-$c-darkBlue: #2F3460;
-$c-darkGreen: #354F52;
-$c-jadeGreen: #52796F;
-$c-mistBlue: #5B797E;
-$c-brightGreen: #84A98C;
-$c-paleGreen: #CAD2C5;
+$c-paleBeige: #fffef2;
+$c-beige: #fff0c2;
+$c-darkTeal: #25424c;
+$c-teal: #6da48f;
+$c-orange: #e56e38;
 
 // Breakpoints
 $bp-2000: 125rem;

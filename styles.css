@@ -1,36 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap");
 body {
   font-size: clamp(0.85rem, 4vw, 1rem);
-  font-family: "Mulish", sans-serif;
+  font-family: "Josefin Sans", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Philosopher", sans-serif;
+  font-family: "Yeseva One", serif;
   margin: 0 0 1rem 0;
   line-height: 1;
+  color: #25424c;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 4vw + 1rem, 3.5rem);
+h1, .stats .stats-content .stat .stat-emphasis {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
 }
 
-h3 {
-  font-size: clamp(1.5rem, 4vw + 1rem, 2rem);
+h3, .main h2 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
 }
 
 h4 {
-  font-size: clamp(1.25rem, 4vw + 1rem, 1.5rem);
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
 }
 
 h5 {
@@ -48,6 +43,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  color: #25424c;
+  background-color: #fffef2;
 }
 
 .center {
@@ -56,88 +53,88 @@ body {
   max-width: 75rem;
 }
 
-.fold {
-  background: linear-gradient(0deg, #354F52 0%, #2F3460 100%);
+nav {
+  background-color: #25424c;
 }
-
 nav .nav-wrapper {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 1fr;
-  padding: 1rem 0;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.75rem 0;
 }
 nav .nav-wrapper img {
-  height: 4.5rem;
+  height: 4rem;
 }
 @media (min-width: 31.25rem) {
   nav .nav-wrapper img {
-    height: 6rem;
+    height: 6.5rem;
   }
 }
 nav .nav-wrapper ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   gap: 1rem;
+  align-items: center;
+  justify-items: center;
 }
-nav .nav-wrapper ul li a {
+nav .nav-wrapper ul a {
+  color: #fffef2;
   text-decoration: none;
-  color: #CAD2C5;
+}
+nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
+  color: #e56e38;
 }
 
 .main {
-  padding: 3.5vw 0 5vw;
+  background: url(/images/img-fall-lake.jpg) no-repeat center bottom/cover;
+  padding: 6vw 0 17vw;
 }
-.main .main-wrapper {
+.about {
+  padding: 5vw 0;
+}
+.about .about-wrapper {
   display: grid;
-  align-items: center;
 }
-@media (max-width: 46.875rem) {
-  .main .main-wrapper {
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
+.about .about-wrapper p:last-of-type {
+  margin-bottom: 0;
+}
+@media (max-width: 50rem) {
+  .about .about-wrapper {
+    gap: 1.5rem;
   }
-  .main .main-wrapper::before {
-    background: url("/images/me-pic.png") no-repeat center/contain;
+  .about .about-wrapper::after {
+    background: url(images/img-sunrise-lake.jpg) no-repeat center 35%/cover;
     content: "";
-    width: 100%;
-    height: 40vw;
     display: block;
+    width: 100%;
+    height: 35vw;
+    border-radius: 5px;
   }
 }
-@media (min-width: 46.875rem) {
-  .main .main-wrapper {
+@media (min-width: 50rem) {
+  .about .about-wrapper {
     grid-template-columns: 1fr 1fr;
-    max-width: 62.5rem;
+    gap: 3rem;
   }
-  .main .main-wrapper::after {
-    background: url("/images/me-pic.png") no-repeat center/contain;
+  .about .about-wrapper::before {
+    background: url(images/img-sunrise-lake.jpg) no-repeat center/cover;
     content: "";
-    width: 100%;
-    height: 30rem;
     display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
   }
-}
-.main .main-content {
-  margin: auto;
-  justify-content: center;
-  padding: 1rem;
-  max-width: 31.25rem;
-}
-.main .main-content h1, .main .main-content p {
-  color: #CAD2C5;
-}
-.main .main-content h3 {
-  color: #CAD2C5;
-  font-family: "Mulish", sans-serif;
-  font-weight: 400;
+  .about .about-wrapper .about-content {
+    padding: 2rem 0;
+  }
 }
 
 .stats {
-  background-color: #5B797E;
-  padding: 5vw 0;
+  padding: 3vw 0;
+  background-color: #25424c;
 }
 .stats .stats-content {
   display: grid;
@@ -145,7 +142,6 @@ nav .nav-wrapper ul li a {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #CAD2C5;
 }
 .stats .stats-content .stat {
   list-style-type: none;
@@ -154,31 +150,13 @@ nav .nav-wrapper ul li a {
   grid-template-rows: auto auto;
 }
 .stats .stats-content .stat .stat-emphasis {
-  font-family: "Philosopher", sans-serif;
+  font-family: "Yeseva One", serif;
   text-transform: uppercase;
-  font-weight: bolder;
-}
-.stats .stats-content .stat .stat-emphasis .stat-bg {
-  font-size: clamp(3.5rem, 4vw + 1rem, 4.5rem);
-  line-height: 1;
-  display: block;
-}
-.stats .stats-content .stat .stat-emphasis .stat-sm {
-  font-size: clamp(1.5rem, 4vw + 1rem, 2rem);
-  display: block;
+  color: #e56e38;
 }
 .stats .stats-content .stat .stat-details {
-  margin: 0 1rem;
-  font-size: clamp(1rem, 4vw + 1rem, 1.125rem);
-  font-weight: bold;
-}
-.stats .stats-content .stat .stat-details::before {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 40%;
-  background: #354F52;
-  margin: 0.5rem auto;
+  font-size: clamp(1.0125rem, 4vw + 1rem, 1.125rem);
+  color: #fffef2;
 }
 @media (min-width: 37.5rem) {
   .stats .stats-content {
@@ -197,54 +175,9 @@ nav .nav-wrapper ul li a {
   }
 }
 
-.portfolio {
+.community {
   padding: 5vw 0;
+}
+.community h2 {
   text-align: center;
-  background-color: #354F52;
-}
-.portfolio h2, .portfolio .portfolio-intro {
-  color: #CAD2C5;
-  max-width: 46.875rem;
-  margin: auto;
-}
-.portfolio h2 {
-  padding-bottom: 1rem;
-}
-.portfolio .portfolio-intro {
-  padding-bottom: 2rem;
-}
-.portfolio .portfolio-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-.portfolio .portfolio-content .portfolio-item {
-  list-style-type: none;
-  margin: 0;
-  transition: all 0.25s ease-in-out;
-  box-shadow: 0px 0px 30px 0px rgba(57, 59, 59, 0.5019607843);
-  background-color: #CAD2C5;
-  border-radius: 10px;
-  position: relative;
-}
-.portfolio .portfolio-content .portfolio-item a {
-  display: block;
-  text-decoration: none;
-  padding: 1.25rem;
-  margin: auto;
-  color: #273c3e;
-}
-.portfolio .portfolio-content .portfolio-item a .img-container {
-  display: block;
-  height: 5rem;
-  overflow: hidden;
-}
-.portfolio .portfolio-content .portfolio-item a .img-container img {
-  display: block;
-  height: auto;
-  width: 100%;
-  transition: transform 10s;
 }/*# sourceMappingURL=styles.css.map */
