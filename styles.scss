@@ -4,6 +4,9 @@
 // Nav Code
 nav {
   background-color: $c-darkTeal;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+  z-index: 1;
+  position: relative;
 
   .nav-wrapper {
     // display: grid;
@@ -42,7 +45,7 @@ nav {
 
         &:hover,
         &:focus {
-          color: $c-orange;
+          color: $c-contrastTeal;
         }
       }
     }
@@ -50,14 +53,10 @@ nav {
 }
 
 .main {
-  background: url(/images/img-fall-lake.jpg) no-repeat center bottom / cover;
+  background: url(/images/img-lake-green2.jpg) no-repeat center / cover;
   padding: 6vw 0 17vw;
   // background: url(/images/img-sunrise-lake.jpg) no-repeat center 40% / cover;
   // padding: 12vw 0;
-
-  // * {
-  //   color: $c-paleBeige;
-  // }
 
   h2 {
     @extend %h3;
@@ -66,6 +65,7 @@ nav {
 
 .about {
   padding: 5vw 0;
+  background-color: $c-lightGreen;
 
   .about-wrapper {
     display: grid;
@@ -78,7 +78,7 @@ nav {
       gap: 1.5rem;
 
       &::after {
-        background: url(images/img-sunrise-lake.jpg) no-repeat center 35% / cover;
+        background: url(images/img-lake-green.jpg) no-repeat center 35% / cover;
         content: '';
         display: block;
         width: 100%;
@@ -91,8 +91,8 @@ nav {
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
 
-      &::before {
-        background: url(images/img-sunrise-lake.jpg) no-repeat center / cover;
+      &::after {
+        background: url(images/img-lake-green.jpg) no-repeat center / cover;
         content: '';
         display: block;
         width: 100%;
@@ -128,7 +128,7 @@ nav {
         font-family: $f-heading;
         text-transform: uppercase;
         @extend %h1;
-        color: $c-orange;
+        color: $c-contrastTeal;
       }
 
       .stat-details {
@@ -155,10 +155,108 @@ nav {
 
 .community {
   padding: 5vw 0;
+  background-color: $c-green;
 
   h2 {
     text-align: center;
+    color: $c-lightGreen;
+    font-weight: 500;
   }
 
+  .center {
+    max-width: $bp-1000;
+  }
 
+  .community-content {
+
+    .community-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li ~ li {
+        margin-top: 1.75rem;
+      }
+
+      .community-item {
+        padding: 1.25rem 1rem;
+        background-color: $c-lightGreen;
+        @extend %h5;
+        font-weight: 400;
+        color: $c-darkTeal;
+        border-radius: 5px;
+      }
+    }
+
+    @media (min-width: $bp-800) {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      padding-top: 3rem;
+      margin-bottom: 3.5vw;
+  
+      &::before {
+        background: url(/images/img-playground.jpg) no-repeat center / cover;
+        border-radius: 5px;
+        content: '';
+        display: block;
+        height: 100%;
+        margin: 0;
+        width: 100%;
+        padding: 2rem 0;
+      }
+
+      .community-list {
+        margin-left: -0.5rem;
+
+        .community-item {
+          padding-left: 1.25rem;
+        }
+      }
+    }
+  }
+
+}
+
+.board {
+  padding: 5vw 0;
+  background-color: $c-lightGreen;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  ul.board-list {
+    margin: 0 auto 0;
+    padding: 0;
+    list-style-type: none;
+    max-width: $bp-950;
+
+    li {
+      text-align: center;
+      display: block;
+      padding: 1rem;
+      background-color: $c-darkTeal;
+      color: $c-paleBeige;
+      border-radius: 5px;
+      //box-shadow: 0 0 10px 1px rgb(37, 66, 76, .5);
+      @extend %h6;
+
+      span {
+        color: $c-contrastTeal;
+        display: block;
+        margin-bottom: .5rem;
+        line-height: 1.2;
+      }
+    }
+    
+    @media (min-width: $bp-500) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 1.5rem;
+    }
+  }
 }

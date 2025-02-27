@@ -3,6 +3,10 @@
 body {
   font-size: clamp(0.85rem, 4vw, 1rem);
   font-family: "Josefin Sans", serif;
+  margin: 0;
+  padding: 0;
+  color: #25424c;
+  background-color: #fffef2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,8 +32,12 @@ h4 {
   font-size: clamp(1.125rem, 4vw, 1.5rem);
 }
 
-h5 {
-  font-size: clamp(1.125rem, 4vw + 1rem, 1.25rem);
+h5, .community .community-content .community-list .community-item {
+  font-size: clamp(1.125rem, 4vw, 1.25rem);
+}
+
+h6, .board ul.board-list li {
+  font-size: clamp(1rem, 4vw, 1.125rem);
 }
 
 html {
@@ -40,13 +48,6 @@ html {
   text-wrap: pretty;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: #25424c;
-  background-color: #fffef2;
-}
-
 .center {
   width: 90%;
   margin: auto;
@@ -55,6 +56,9 @@ body {
 
 nav {
   background-color: #25424c;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
 }
 nav .nav-wrapper {
   display: flex;
@@ -85,15 +89,16 @@ nav .nav-wrapper ul a {
   text-decoration: none;
 }
 nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
-  color: #e56e38;
+  color: #88B4A2;
 }
 
 .main {
-  background: url(/images/img-fall-lake.jpg) no-repeat center bottom/cover;
+  background: url(/images/img-lake-green2.jpg) no-repeat center/cover;
   padding: 6vw 0 17vw;
 }
 .about {
   padding: 5vw 0;
+  background-color: #d5e2d4;
 }
 .about .about-wrapper {
   display: grid;
@@ -106,7 +111,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
     gap: 1.5rem;
   }
   .about .about-wrapper::after {
-    background: url(images/img-sunrise-lake.jpg) no-repeat center 35%/cover;
+    background: url(images/img-lake-green.jpg) no-repeat center 35%/cover;
     content: "";
     display: block;
     width: 100%;
@@ -119,8 +124,8 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
-  .about .about-wrapper::before {
-    background: url(images/img-sunrise-lake.jpg) no-repeat center/cover;
+  .about .about-wrapper::after {
+    background: url(images/img-lake-green.jpg) no-repeat center/cover;
     content: "";
     display: block;
     width: 100%;
@@ -152,7 +157,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
 .stats .stats-content .stat .stat-emphasis {
   font-family: "Yeseva One", serif;
   text-transform: uppercase;
-  color: #e56e38;
+  color: #88B4A2;
 }
 .stats .stats-content .stat .stat-details {
   font-size: clamp(1.0125rem, 4vw + 1rem, 1.125rem);
@@ -177,7 +182,91 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
 
 .community {
   padding: 5vw 0;
+  background-color: #39655c;
 }
 .community h2 {
   text-align: center;
+  color: #d5e2d4;
+  font-weight: 500;
+}
+.community .center {
+  max-width: 62.5rem;
+}
+.community .community-content .community-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.community .community-content .community-list li ~ li {
+  margin-top: 1.75rem;
+}
+.community .community-content .community-list .community-item {
+  padding: 1.25rem 1rem;
+  background-color: #d5e2d4;
+  font-weight: 400;
+  color: #25424c;
+  border-radius: 5px;
+}
+@media (min-width: 50rem) {
+  .community .community-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding-top: 3rem;
+    margin-bottom: 3.5vw;
+  }
+  .community .community-content::before {
+    background: url(/images/img-playground.jpg) no-repeat center/cover;
+    border-radius: 5px;
+    content: "";
+    display: block;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .community .community-content .community-list {
+    margin-left: -0.5rem;
+  }
+  .community .community-content .community-list .community-item {
+    padding-left: 1.25rem;
+  }
+}
+
+.board {
+  padding: 5vw 0;
+  background-color: #d5e2d4;
+}
+.board h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.board ul.board-list {
+  margin: 0 auto 0;
+  padding: 0;
+  list-style-type: none;
+  max-width: 59.375rem;
+}
+.board ul.board-list li {
+  text-align: center;
+  display: block;
+  padding: 1rem;
+  background-color: #25424c;
+  color: #fffef2;
+  border-radius: 5px;
+}
+.board ul.board-list li span {
+  color: #88B4A2;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+@media (min-width: 31.25rem) {
+  .board ul.board-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
