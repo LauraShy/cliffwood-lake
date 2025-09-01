@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, %h1 {
   //font-size: 3.5rem;
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-size: clamp(2.125rem, 4vw, 3.5rem);
 }
 
 h2, %h2 {
@@ -39,12 +39,12 @@ h4, %h4 {
 
 h5, %h5 {
   //font-size: 1.25rem;
-  font-size: clamp(1.125rem, 4vw, 1.25rem);
+  font-size: clamp(1.025rem, 4vw, 1.125rem);
 }
 
 h6, %h6 {
   //font-size: 1.25rem;
-  font-size: clamp(1rem, 4vw, 1.125rem);
+  font-size: clamp(1rem, 4vw, 1.025rem);
 }
 
 // Shared Code
@@ -61,4 +61,30 @@ html {
   width: 90%;
   margin: auto;
   max-width: 75rem;
+}
+
+@mixin button {
+  display: block;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: $f-heading;
+  background-color: $c-darkTeal;
+  color: $c-paleBeige;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 5px;
+  transition: 0.3s ease all;
+
+  &:hover,
+  &:focus {
+    background-color: $c-green;
+    color: $c-paleBeige;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }

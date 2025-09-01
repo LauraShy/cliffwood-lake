@@ -52,17 +52,58 @@ nav {
   }
 }
 
+
+// Main Section
 .main {
-  background: url(/images/img-lake-green2.jpg) no-repeat center / cover;
-  padding: 6vw 0 17vw;
+  @media (max-width: $bp-400) {
+    background: none;
+    padding: 0;
+    
+    .center {
+      width: 100%;
+      max-width: 100%;
+
+      .main-content {
+        width: 90%;
+        margin: auto;
+        max-width: 75rem;
+        padding: 5vw 0;
+
+        h2 {
+          margin-bottom: 0rem;
+        }
+      }
+
+      &::before {
+        content: '';
+        background: url(/images/img-lake-green2.jpg) no-repeat center / cover;
+        height: 35vw;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  background: url(/images/img-lake-green2.jpg) no-repeat center 45% / cover;
+  padding: 5vw 0 19vw;
   // background: url(/images/img-sunrise-lake.jpg) no-repeat center 40% / cover;
   // padding: 12vw 0;
 
+  h1, h2 {
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.4);
+  }
+
+  h1 {
+    margin-bottom: .5rem;
+  }
+
   h2 {
-    @extend %h3;
+    @extend %h4;
   }
 }
 
+
+// About Section
 .about {
   padding: 5vw 0;
   background-color: $c-lightGreen;
@@ -72,6 +113,10 @@ nav {
 
     p:last-of-type {
       margin-bottom: 0;
+    }
+
+    a {
+      @include button;
     }
 
     @media (max-width: $bp-800) {
@@ -107,6 +152,8 @@ nav {
   }
 }
 
+
+// Stats Section
 .stats {
   padding: 3vw 0;
   background-color: $c-darkTeal;
@@ -137,15 +184,8 @@ nav {
       }
     }
 
-    @media (min-width: $bp-600) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      max-width: $bp-650;
-      margin: auto;
-    }
-
-    @media (min-width: $bp-1000) {
-      grid-template-columns: repeat(4, 1fr);
+    @media (min-width: $bp-800) {
+      grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr;
       gap: .25rem;
       max-width: 100%;
@@ -153,6 +193,8 @@ nav {
   }
 }
 
+
+// Community Section
 .community {
   padding: 5vw 0;
   background-color: $c-green;
@@ -175,11 +217,11 @@ nav {
       list-style-type: none;
 
       li ~ li {
-        margin-top: 1.75rem;
+        margin-top: 1rem;
       }
 
       .community-item {
-        padding: 1.25rem 1rem;
+        padding: 1rem 1rem;
         background-color: $c-lightGreen;
         @extend %h5;
         font-weight: 400;
@@ -188,7 +230,19 @@ nav {
       }
     }
 
-    @media (min-width: $bp-800) {
+    @media (max-width: $bp-600) {
+      &::before {
+        content: '';
+        display: block;
+        background: url(/images/img-playground.jpg) no-repeat 70% center / cover;
+        width: 100%;
+        height: 35vw;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+    }
+
+    @media (min-width: $bp-600) {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
       grid-template-rows: 1fr;
@@ -197,7 +251,7 @@ nav {
       margin-bottom: 3.5vw;
   
       &::before {
-        background: url(/images/img-playground.jpg) no-repeat center / cover;
+        background: url(/images/img-playground.jpg) no-repeat 70% center / cover;
         border-radius: 5px;
         content: '';
         display: block;
@@ -211,7 +265,11 @@ nav {
         margin-left: -0.5rem;
 
         .community-item {
-          padding-left: 1.25rem;
+          padding-left: 1.25rem 1rem 1rem 1.25rem;
+        }
+
+        li ~ li {
+          margin-top: 1.5rem;
         }
       }
     }
@@ -219,6 +277,8 @@ nav {
 
 }
 
+
+// Board Section
 .board {
   padding: 5vw 0;
   background-color: $c-lightGreen;
@@ -251,12 +311,52 @@ nav {
         line-height: 1.2;
       }
     }
+
+    li ~ li {
+      margin-top: 1rem;
+    }
     
     @media (min-width: $bp-500) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
       gap: 1.5rem;
+
+      li ~ li {
+        margin-top: 0rem;
+      }
+    }
+  }
+}
+
+// Contact Section
+.contact {
+  padding: 5vw 0;
+
+  .center {
+    max-width: $bp-950;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      a {
+        @include button;
+      }
+    }
+  }
+
+  @media (min-width: $bp-700) {
+    .contact-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
     }
   }
 }
