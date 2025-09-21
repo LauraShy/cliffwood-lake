@@ -100,7 +100,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
 }
 
 .main {
-  background: url(/images/img-lake-green2.jpg) no-repeat center 45%/cover;
+  background: url(./images/img-lake-green2.jpg) no-repeat center 45%/cover;
   padding: 5vw 0 19vw;
 }
 @media (max-width: 25rem) {
@@ -123,7 +123,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
   }
   .main .center::before {
     content: "";
-    background: url(/images/img-lake-green2.jpg) no-repeat center/cover;
+    background: url(./images/img-lake-green2.jpg) no-repeat center/cover;
     height: 35vw;
     width: 100%;
     display: block;
@@ -167,7 +167,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
     gap: 1.5rem;
   }
   .about .about-wrapper::after {
-    background: url(images/img-lake-green.jpg) no-repeat center 35%/cover;
+    background: url(./images/img-lake-green.jpg) no-repeat center 35%/cover;
     content: "";
     display: block;
     width: 100%;
@@ -181,7 +181,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
     gap: 3rem;
   }
   .about .about-wrapper::after {
-    background: url(images/img-lake-green.jpg) no-repeat center/cover;
+    background: url(./images/img-lake-green.jpg) no-repeat center/cover;
     content: "";
     display: block;
     width: 100%;
@@ -259,7 +259,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
   .community .community-content::before {
     content: "";
     display: block;
-    background: url(/images/img-playground.jpg) no-repeat 70% center/cover;
+    background: url(./images/img-playground.jpg) no-repeat 70% center/cover;
     width: 100%;
     height: 35vw;
     margin-bottom: 1rem;
@@ -276,7 +276,7 @@ nav .nav-wrapper ul a:hover, nav .nav-wrapper ul a:focus {
     margin-bottom: 3.5vw;
   }
   .community .community-content::before {
-    background: url(/images/img-playground.jpg) no-repeat 70% center/cover;
+    background: url(./images/img-playground.jpg) no-repeat 70% center/cover;
     border-radius: 5px;
     content: "";
     display: block;
